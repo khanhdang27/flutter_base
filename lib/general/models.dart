@@ -1,0 +1,1 @@
+// export 'package:base/modules/client/provider_model.dart';
