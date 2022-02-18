@@ -2,24 +2,26 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:base/general/configs.dart';
 import 'package:base/general/services.dart';
+import 'package:base/general/plugins.dart';
 
-class App extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'BASE',
-      theme: AppTheme().generateTheme(),
-      themeMode: ThemeMode.light,
-      debugShowCheckedModeBanner: false,
-      locale: Storage.getLanguage() == 'zh' ? Locale('zh') : Locale('en','US'),
-      fallbackLocale: LocalizationService.fallbackLocale,
-      translations: LocalizationService(),
-      initialRoute: AuthService().setInitialRoute(),
-      routes: AppRoute.routes,
-      initialBinding: AppBinding(),
+    return ScreenUtilInit(
+      builder: () => GetMaterialApp(
+        title: 'BASE',
+        theme: AppTheme().generateTheme(),
+        themeMode: ThemeMode.light,
+        debugShowCheckedModeBanner: false,
+        locale: Storage.getLanguage() == 'zh' ? Locale('zh') : Locale('en','US'),
+        fallbackLocale: LocalizationService.fallbackLocale,
+        translations: LocalizationService(),
+        initialRoute: AuthService().setInitialRoute(),
+        routes: AppRoute.routes,
+        initialBinding: AppBinding(),
+      ),
     );
   }
 }

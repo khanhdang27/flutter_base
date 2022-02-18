@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:base/general/configs.dart';
-import 'package:get/get.dart';
 import 'package:base/general/screens.dart';
+import 'package:base/general/plugins.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -21,7 +21,10 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Center(
           child: Column(
             children: [
-              Text('homeabc'.tr),
+              Text('home'.tr, style: TextStyle(
+                fontSize: 50.sp
+              ),),
+              Text(1.h.toString()),
               DropdownButton<String>(
                 icon: Icon(Icons.arrow_drop_down),
                 value: _selectedLang,

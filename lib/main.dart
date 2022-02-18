@@ -5,5 +5,5 @@ import 'app.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
-  runApp(App());
+  runApp(MyApp());
 }
